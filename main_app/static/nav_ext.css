@@ -1,0 +1,28 @@
+#nav > p{
+    color: white;
+}
+#nav{
+    display: flex;
+    flex: 100%;
+    background-color: black;
+    justify-content: space-around;
+    padding-top: 1%;
+    border: 5px solid black;
+    color: azure;
+}
+#nav-options{
+    display: flex;
+    gap: 5%;
+}
+#footer{
+    justify-content: center;
+    gap: 3%;
+}
+#filler{
+    flex-direction: column;
+    min-height: 1px;
+}
+#footer, #filler{
+    color: antiquewhite;
+    background-color: #737373;
+}

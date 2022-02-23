@@ -1,0 +1,20 @@
+.dropdown{
+    padding-left: 5%;
+    padding-top: 5%;
+}
+.product{
+    display: flex;
+    max-width: 60%;
+    margin-left: 10%;
+    margin-top: 8%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-left: 5%;
+    border: 5px solid grey
+}
+.picture{
+    width: 33%;
+}
+.info{
+    width: 66%;
+}
