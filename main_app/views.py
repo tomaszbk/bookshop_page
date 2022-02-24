@@ -6,9 +6,13 @@ def index(request):
     return render(request, 'index.html')
 
 
-def search(request):
-    return render(request, 'search.html')
+def products(request):
+    return render(request, 'products.html')
 
-
-def product(request):
+#to change
+def product(request): 
     return render(request, 'product.html')
+
+
+def contact(request):
+    return render(request, 'contact.html')
