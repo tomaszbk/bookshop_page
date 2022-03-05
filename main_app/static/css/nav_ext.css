@@ -12,16 +12,18 @@
 }
 #nav-options{
     display: flex;
-    gap: 5%;
+    gap: 20px;
 }
 #footer{
     justify-content: center;
     gap: 5%;
     padding-top: 2%;
+    display: flex;
 }
 #filler{
     flex-direction: column;
     min-height: 1px;
+    display: flex;
 }
 #footer, #filler{
     color: antiquewhite;
