@@ -12,7 +12,8 @@ class CreationForm(UserCreationForm):
         super(CreationForm, self).__init__(*args, **kwargs)
         for fieldname in ['username', 'password1', 'password2']:
             self.fields[fieldname].help_text = None
-        #  self.fields[fieldname].widget.attrs.update({'class': fieldname})
+    password1 = forms.CharField(label='password', min_length=5)  
+    password2 = forms.CharField(label='Confirm password', min_length=5)  
 
 
 class LoginForm(forms.Form):

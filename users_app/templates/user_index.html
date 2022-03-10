@@ -10,7 +10,26 @@
     <title>User info</title>
 </head>
 <body>
-    
+    <h1>welcome {{ request.user }}!</h1>
+   
+   <h1>My cart</h1>
+   {% for item in list %}
+    <div class="product">
+        <div class="picture">
+            <img src="" alt="picture">
+        </div>
+        <div class="info">
+            <h3>Title</h3>
+            <p>Autor</p>
+            <h4>Precio</h4>
+        </div>
+    </div>
+    {% empty %}
+    <h3>Sin items en el carrito</h3>
+    {% endfor %}
+
+
+   
 </body>
 </html>
 {% endblock content %}
