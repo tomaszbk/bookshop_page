@@ -1,0 +1,33 @@
+{% extends 'nav_ext.html' %}
+{% block content %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'css/products.css' %}">
+    <title>{{product.title}}</title>
+</head>
+
+    <body>
+        <div class="product">
+            <div class="picture">
+                <img src="{{ product.image }}" alt="picture" class="product_img">
+            </div>
+            <div class="info">
+                <h3>Title: {{ product.title}}</h3>
+                <p>Autor {{ product.author}}</p>
+                <h4>Precio $ {{ product.price}}</h4>
+                <h4>Descripción: {{product.description}}</h4>
+            </div>
+            <div class= "add_cart">
+                <a href="add_cart/{{product.id}}">agregar al carrito</a>
+                <h3>product likes: {{product.likes}}</h3>
+                <a href="like/{{product.id}}">dar like</a>
+            </div>
+            
+        </div>
+    </body>
+</html>
+
+{% endblock content %}

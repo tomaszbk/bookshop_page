@@ -1,4 +1,6 @@
 from django.db import models
+from django.contrib.auth.models import AbstractUser
+from django.contrib.auth.models import User
 
 # Create your models here.
 GenreType = models.TextChoices('GenreType', 'ACTION HORROR ADVENTURE COMEDY KIDS')
@@ -10,6 +12,12 @@ class Product(models.Model):
     genre = models.CharField(max_length=20, choices=GenreType.choices)
     description = models.CharField(max_length=500, default='null')
     image = models.CharField(max_length=100,default='no-img')
+    likes = models.IntegerField(default=0) #nuevo
 
     def __str__(self):
         return self.title
+
+
+class User_data(models.Model):
+    liked_books = models.CharField(max_length=500,default='[]')
+    cart = models.CharField(max_length=500, default='[]')

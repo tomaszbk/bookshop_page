@@ -17,23 +17,27 @@
           Dropdown button
         </button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-          <li><a class="dropdown-item" href="#">Action</a></li>
-          <li><a class="dropdown-item" href="#">Another action</a></li>
-          <li><a class="dropdown-item" href="#">Something else here</a></li>
+          <li><a class="dropdown-item" href="#">action</a></li>
+          <li><a class="dropdown-item" href="#">horror</a></li>
+          <li><a class="dropdown-item" href="#">adventure</a></li>
         </ul>
-      </div>
+    </div>
 
     {% for product in products %}
-    <div class="product">
-        <div class="picture">
-            <img src="{{ product.image }}" alt="picture" class="product_img">
+    
+        <div class="product">
+            <div class="picture">
+                <img src="{{ product.image }}" alt="picture" class="product_img">
+            </div>
+            <div class="info">
+                <a href="products/{{product.id}}"><h3>Title: {{ product.title}}</h3></a>
+                <p>Autor {{ product.author}}</p>
+                <h4>Precio $ {{ product.price}}</h4>
+                <h2>product likes: {{product.likes}}</h2>
+            </div>
+            
         </div>
-        <div class="info">
-            <h3>Title: {{ product.title}}</h3>
-            <p>Autor {{ product.author}}</p>
-            <h4>Precio $ {{ product.price}}</h4>
-        </div>
-    </div>
+    
     {% empty %}
     <h3>No produts matching</h3>
     {% endfor %}

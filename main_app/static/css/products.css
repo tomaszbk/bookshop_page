@@ -17,10 +17,16 @@
     width: 33%;
 }
 .info{
-    width: 66%;
+    width: 40%;
 }
 
 .product_img{
     width: 100px;
     height: 100px;
+}
+
+@media (max-width: 600px) {
+    .product{
+        max-width: 90%;
+    }
 }

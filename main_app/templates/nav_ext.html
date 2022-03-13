@@ -15,7 +15,14 @@
         </div>
         
         <div id="user">
-            <a href="{% url 'users_app:user_index' %}"><p>Login</p></a>
+            <a href="{% url 'users_app:user_index' %}"><p>
+                {{data}}
+                {% if request.user.is_authenticated %}
+                My account
+                {% else %}
+                Log in
+                {% endif %}
+            </p></a>
         </div>
     </div>
 
