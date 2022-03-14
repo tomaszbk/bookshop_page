@@ -50,9 +50,19 @@ def add_cart(request, product_id):
     user_data.save()
     return HttpResponseRedirect(reverse('main_app:index'))
 
+def remove_cart(request, product_id):
+    user_data = User_data.objects.get(pk= request.user.id)
+    user_cart = sql_to_list( user_data.cart )
+    user_cart.remove(str(product_id))
+    user_cart = str(user_cart)
+    user_data.cart = user_cart
+    user_data.save()
+    return HttpResponseRedirect(reverse('users_app:user_index'))
 
 
-def update_rating(request, product_id): #pendiente: check if already liked
+
+
+def update_rating(request, product_id):
     product = Product.objects.get(pk= product_id )
     user_data = User_data.objects.get(pk= request.user.id)
     user_likes =  sql_to_list( user_data.liked_books )

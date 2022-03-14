@@ -25,10 +25,11 @@
             <a href="../products/{{product.id}}"><h3>Title: {{product.title}}</h3></a>
             <p>Autor: {{product.author}}</p>
             <h4>Precio {{product.price}}</h4>
+            <a href="../products/remove_cart/{{product.id}}"><h3>remove from cart</h3></a>
         </div>
     </div>
     {% empty %}
-    <h3>Sin items en el carrito</h3>
+    <h3 class="no_stock">Sin items en el carrito</h3>
     {% endfor %}
     <a href="{% url 'users_app:logout' %}">Log out</a>
 
