@@ -24,6 +24,11 @@
     width: 100px;
     height: 100px;
 }
+#no_stock{
+    text-align: center;
+    padding-bottom: 5%;
+    padding-top: 5%;
+}
 
 @media (max-width: 600px) {
     .product{

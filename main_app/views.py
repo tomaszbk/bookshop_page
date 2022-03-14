@@ -11,10 +11,13 @@ def index(request):
     return render(request, 'index.html')
 
 
-def products(request):
+def products(request, genre = 0):
+    if genre == 0:
+        products = Product.objects.all()
+    else:
+        products = Product.objects.filter(genre =genre)
     
-    return render(request, 'products.html', {'products': Product.objects.all(),
-    'url_start':"url 'main_app:products/" })
+    return render(request, 'products.html', {'products': products})
 
 #to change
 def product(request, product_id):
@@ -65,6 +68,8 @@ def update_rating(request, product_id): #pendiente: check if already liked
     user_data.liked_books = user_likes
     user_data.save()
     return HttpResponseRedirect(reverse('main_app:products'))
+
+
 
 
 def sql_to_list(x):

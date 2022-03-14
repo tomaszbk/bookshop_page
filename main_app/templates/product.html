@@ -15,7 +15,7 @@
                 <img src="{{ product.image }}" alt="picture" class="product_img">
             </div>
             <div class="info">
-                <h3>Title: {{ product.title}}</h3>
+                <h3>Title: {{ product.title|capfirst}}</h3>
                 <p>Autor {{ product.author}}</p>
                 <h4>Precio $ {{ product.price}}</h4>
                 <h4>Descripción: {{product.description}}</h4>
