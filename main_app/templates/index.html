@@ -26,22 +26,19 @@
         </div>         
         
 
-        <div id="featured" style="display: block;" class="a">
+        <div id="featured" class="a">
             <div>
-                <h2>Best sellers</h2>  
+                <h2>Top Rated</h2>  
             </div>
-            <div id="best-sellers" style="display: flex;">
-                <div id="best1">
-                    <img src="" alt="bestseller">
-                    <p>Title</p>
-                </div>
-
-                <div id="best2">
-                    <img src="" alt="bestseller">
-                    <p>Title</p>
-                </div>
-
-                <div id="best3">
+            <div id="best-sellers">
+                {% for product in products %}
+                    <div id="best">
+                        <img class="best-logo" src="{{product.image}}" alt="bestseller">
+                        <p>{{product.title}}</p>
+                        <p>{{product.likes}} likes</p>
+                    </div>
+                {% endfor %}
+                <div  id="best1">
                     <img src="" alt="bestseller">
                     <p>Title</p>
                 </div>
@@ -51,11 +48,11 @@
         <div id="info" style="display: block; height: 200px;" class="c">
             <h1> Created with:</h1> 
             <div id="tools">
-                <img class="tool-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1200px-Python-logo-notext.svg.png" alt="python">
-                <img src="" alt="django">
-                <img src="" alt="html">
-                <img src="" alt="">
-                <img src="" alt="">
+                <img class="tool-logo" src="{% static 'img/python_logo2.png' %}" alt="python">
+                <img class="tool-logo" src="{% static 'img/django_logo.png' %}" alt="django">
+                <img class="tool-logo" src="{% static 'img/html_logo.png' %}" alt="html">
+                <!-- <img class="tool-logo" src="{% static 'img/sqlite_logo.jpeg' %}" alt=""> -->
+                <img class="tool-logo"src="" alt="">
             </div>
 
         </div>

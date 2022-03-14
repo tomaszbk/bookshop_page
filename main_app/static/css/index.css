@@ -23,12 +23,15 @@ body > div{
     padding-top: 1%;
     color: white;
     height: 300px;
+    display: block;
+    height: 350px;
 }
 
 #best-sellers{
     padding-top: 2%;
     display: flex;
     justify-content: space-around;
+    
 }
 h2{
     text-align: center;
@@ -53,6 +56,10 @@ h2{
 .tool-logo{
     max-width: 100px;
     max-height: 100px;
+}
+.best-logo{
+    max-width: 150px;
+    max-height: 150px;
 }
 
 @media (max-width: 600px) {

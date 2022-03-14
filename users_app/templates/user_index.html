@@ -19,7 +19,7 @@
    {% for product in products %}
     <div class="product" style="max-width: 40%;">
         <div class="picture">
-            <img src="" alt="picture">
+            <img src="{{ product.image }}" alt="picture" class="product_img">
         </div>
         <div class="info">
             <a href="../products/{{product.id}}"><h3>Title: {{product.title}}</h3></a>

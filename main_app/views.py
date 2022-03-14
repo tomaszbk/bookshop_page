@@ -8,7 +8,10 @@ from django.db.models import F
 # Create your views here.
 
 def index(request):
-    return render(request, 'index.html')
+    products = Product.objects.all()
+    products = products.order_by("likes").reverse()
+
+    return render(request, 'index.html',{'products':products[:3]})
 
 
 def products(request, genre = 0):
@@ -16,12 +19,12 @@ def products(request, genre = 0):
         products = Product.objects.all()
     else:
         products = Product.objects.filter(genre =genre)
-    
+
     return render(request, 'products.html', {'products': products})
 
 #to change
 def product(request, product_id):
-    return render(request, 'product.html',{'product':Product.objects.get(pk= product_id  )})
+    return render(request, 'product.html',{'product':Product.objects.get(pk= product_id )})
 
 
 def contact(request):
@@ -56,7 +59,7 @@ def update_rating(request, product_id): #pendiente: check if already liked
     print(f"user_likes made list: {user_likes}")
     print(f"product_id es {product_id}")
     print(f"product type: {type(product_id)}")
-    print(f"user_likes type: {type(user_likes[0])}")
+   
     if str(product_id) in user_likes:
         return HttpResponseRedirect(reverse('main_app:products'))
     
