@@ -21,9 +21,9 @@
                 <h4>Descripción: {{product.description}}</h4>
             </div>
             <div class= "add_cart">
-                <a href="add_cart/{{product.id}}">agregar al carrito</a>
+                <a href="{% url 'main_app:add_cart' %}?id={{product.id}}">agregar al carrito</a>
                 <h3>product likes: {{product.likes}}</h3>
-                <a href="like/{{product.id}}">dar like</a>
+                <a href="{% url 'main_app:like' %}?id={{product.id}}">dar like</a>
             </div>
             
         </div>

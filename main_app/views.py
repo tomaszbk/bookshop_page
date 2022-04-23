@@ -31,24 +31,27 @@ def contact(request):
     return render(request, 'contact.html')
 
 
-def add_cart(request, product_id):
-    user_data = User_data.objects.get(pk= request.user.id)
+def add_cart(request):
+    product_id = request.GET['id']
+    if request.user.is_authenticated:    
+        user_data = User_data.objects.get(pk= request.user.id)
 
-    print(f"user_data is {user_data}")
-    print(f"user_cart raw is {user_data.cart}")
+        print(f"user_data is {user_data}")
+        print(f"user_cart raw is {user_data.cart}")
 
-    user_cart = sql_to_list( user_data.cart ) #list of cart
+        user_cart = sql_to_list( user_data.cart ) #list of cart
 
-    print(f"user_cart transformed is {user_cart}")
-    if product_id in user_cart:
-        return HttpResponseRedirect(reverse('main_app:products/' + str(product_id) ))
-    print(f"product_id es {product_id}")
-    user_cart.append(product_id)
-    user_cart = str(user_cart)
-    print(f"user_cart con item agregado es {user_cart}")
-    user_data.cart = user_cart
-    user_data.save()
-    return HttpResponseRedirect(reverse('main_app:index'))
+        print(f"user_cart transformed is {user_cart}")
+        if product_id in user_cart:
+            return HttpResponseRedirect('products/'+ str(product_id))
+        print(f"product_id es {product_id}")
+        user_cart.append(product_id)
+        user_cart = str(user_cart)
+        print(f"user_cart con item agregado es {user_cart}")
+        user_data.cart = user_cart
+        user_data.save()
+        return HttpResponseRedirect(reverse('main_app:products'))
+    return HttpResponseRedirect('products/'+ str(product_id)) #should alert: You need to sign in!
 
 def remove_cart(request, product_id):
     user_data = User_data.objects.get(pk= request.user.id)
@@ -62,25 +65,28 @@ def remove_cart(request, product_id):
 
 
 
-def update_rating(request, product_id):
-    product = Product.objects.get(pk= product_id )
-    user_data = User_data.objects.get(pk= request.user.id)
-    user_likes =  sql_to_list( user_data.liked_books )
-    print(f"user_likes made list: {user_likes}")
-    print(f"product_id es {product_id}")
-    print(f"product type: {type(product_id)}")
-   
-    if str(product_id) in user_likes:
-        return HttpResponseRedirect(reverse('main_app:products'))
+def update_rating(request):
+    product_id = request.GET['id']
+    if request.user.is_authenticated:      
+        product = Product.objects.get(pk= product_id )
+        user_data = User_data.objects.get(pk= request.user.id)
+        user_likes =  sql_to_list( user_data.liked_books )
+        print(f"user_likes made list: {user_likes}")
+        print(f"product_id es {product_id}")
+        print(f"product type: {type(product_id)}")
     
-    product.likes = F('likes') + 1
-    product.save()   
-    user_likes.append(product_id)
-    print(f"user_likes w item appended: {user_likes}")
-    user_likes = str(user_likes)
-    user_data.liked_books = user_likes
-    user_data.save()
-    return HttpResponseRedirect(reverse('main_app:products'))
+        if str(product_id) in user_likes:
+            return HttpResponseRedirect('products/'+ str(product_id))
+        
+        product.likes = F('likes') + 1
+        product.save()   
+        user_likes.append(product_id)
+        print(f"user_likes w item appended: {user_likes}")
+        user_likes = str(user_likes)
+        user_data.liked_books = user_likes
+        user_data.save()
+        return HttpResponseRedirect('products/'+ str(product_id))
+    return HttpResponseRedirect('products/'+ str(product_id)) #should alert: You need to sign in!
 
 
 

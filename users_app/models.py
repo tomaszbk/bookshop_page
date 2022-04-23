@@ -16,7 +16,7 @@ class Product(models.Model):
     title = models.CharField(max_length=50)
     author = models.CharField(max_length=30)
     price = models.IntegerField()
-    genre = models.IntegerField(max_length=20, choices=CHOICES)
+    genre = models.IntegerField(choices=CHOICES)
     description = models.CharField(max_length=500, default='null')
     image = models.CharField(max_length=100,default='no-img')
     likes = models.IntegerField(default=0) #nuevo
