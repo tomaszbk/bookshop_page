@@ -9,13 +9,14 @@ CHOICES = (
     (2,"HORROR"),
     (3,"ADVENTURE"),
     (4,"COMEDY"),
-    (5,"KIDS")
+    (5,"KIDS"),
+    (6,"ROMANCE")
 )
 
 class Product(models.Model):
     title = models.CharField(max_length=50)
     author = models.CharField(max_length=30)
-    price = models.IntegerField()
+    price = models.FloatField()
     genre = models.IntegerField(choices=CHOICES)
     description = models.CharField(max_length=500, default='null')
     image = models.CharField(max_length=100,default='no-img')
