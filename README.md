@@ -6,7 +6,7 @@ Check it out! https://omega-bookshop.herokuapp.com/
 
 Made with: 
 
-Python \n
+Python 
 Django
 Html, css, js
 Sqlite
@@ -14,7 +14,7 @@ Selenium
 
 Main challenges overcomed:
 
-Implementing users with user carts
-Product filtering
-Liking products and avoiding a user to like more than 1 time a same product
+Implementing users with user carts,
+Product filtering,
+Liking products and avoiding a user to like more than 1 time a same product,
 Adding books with selenium scraping
