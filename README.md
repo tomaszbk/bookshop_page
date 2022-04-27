@@ -6,7 +6,7 @@ Check it out! https://omega-bookshop.herokuapp.com/
 
 Made with: 
 
-Python
+Python \n
 Django
 Html, css, js
 Sqlite
