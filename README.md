@@ -7,14 +7,14 @@ the connection with a database and user's accounts
 Made with: 
 
 Python 
-Django
-Html, css, js
-Sqlite
-Selenium
+Django  
+Html, css, js  
+Sqlite  
+Selenium  
 
-Main challenges overcomed:
+### Main challenges overcomed:
 
-Implementing users with user carts,
-Product filtering,
-Liking products and avoiding a user to like more than 1 time a same product,
-Adding books with selenium scraping
+* Implementing users with user carts,
+* Product filtering,
+* Liking products and avoiding a user to like more than 1 time a same product,
+* Adding books with selenium scraping
