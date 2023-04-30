@@ -1,16 +1,17 @@
 # bookshop_page
-Simulation of a bookshop's web page, where the focus is not in the design(you'll notice), but in the backend software managing url's routes, 
+Simulation of a bookshop's web page, where the focus is not in the design, but in the backend software managing url's routes, 
 the connection with a database and user's accounts
+Also includes the web scraper used
 
 ~~Check it out! https://omega-bookshop.herokuapp.com/~~ (NOTE: Currently migrating to aws due to heroku's new policies)
 
 Made with: 
 
-Python 
-Django  
-Html, css, js  
+Python  
+Django   
 Sqlite  
 Selenium  
+Html, css, js 
 
 ### Main challenges overcomed:
 
