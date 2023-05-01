@@ -19,3 +19,7 @@ Html, css, js
 * Product filtering,
 * Liking products and avoiding a user to like more than 1 time a same product,
 * Adding books with selenium scraping
+
+## The scraper:
+Using Selenium and Pandas, I scraped a local bookshop's web page to include some books in my catalog.  
+Modified the resulting table by adding the 'likes' attribute, which will store the total amount of likes users have given the respective book
