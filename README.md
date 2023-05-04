@@ -1,7 +1,9 @@
 # Omega Bookshop's Web Simulation
 Simulation of a bookshop's web page, where the focus is not in the design, but in the backend software managing url's routes, 
 the connection with a database and user's accounts
-Also includes the web scraper used
+Also includes the web scraper used and dockerfile to emulate it
+
+<img src="https://github.com/kukelia/bookshop_page/blob/master/img/index.png" alt= “” width="950" height="550">
 
 ~~Check it out! https://omega-bookshop.herokuapp.com/~~ (NOTE: Currently migrating to aws due to heroku's new policies)
 
@@ -23,3 +25,5 @@ Html, css, js
 ## The scraper:
 Using Selenium and Pandas, I scraped a local bookshop's web page to include some books in my catalog.  
 Modified the resulting table by adding the 'likes' attribute, which will store the total amount of likes users have given the respective book
+
+<img src="https://github.com/kukelia/bookshop_page/blob/master/img/products.png" alt= “” width="950" height="500">
