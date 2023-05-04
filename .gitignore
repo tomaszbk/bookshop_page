@@ -1,1 +1,3 @@
 html workshop/index.css
+env
+*/__pycache__
