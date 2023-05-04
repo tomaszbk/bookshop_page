@@ -17,14 +17,29 @@ def index(request):
 def products(request, genre = 0):
     if genre == 0:
         products = Product.objects.all()
+        filter_text = "No filter applied"
     else:
         products = Product.objects.filter(genre =genre)
+        match genre:
+            case 1:
+                filter_text = "Action genre books"
+            case 2:
+                filter_text = "Horror genre books"
+            case 3:
+                filter_text = "Adventure genre books"
+            case 4:
+                filter_text = "Comedy genre books"
+            case 5:
+                filter_text = "Kids genre books"
+            case 6:
+                filter_text = "Romance genre books"
 
-    return render(request, 'products.html', {'products': products})
+    return render(request, 'products.html', {'products': products,
+                                            'filter_text':filter_text})
 
 #to change
 def product(request, product_id):
-    return render(request, 'product.html',{'product':Product.objects.get(pk= product_id )})
+    return render(request, 'product.html',{'product':Product.objects.get(pk=product_id )})
 
 
 def contact(request):

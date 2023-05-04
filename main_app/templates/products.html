@@ -31,6 +31,8 @@
         </ul>
     </div>
 
+    <h1 style="margin-left:20%">{{ filter_text }}</h1>
+
     {% for product in products %}
     
         <div class="product">
@@ -40,8 +42,8 @@
             <div class="info">
                 <a href="products/{{product.id}}"><h3>{{ product.title}}</h3></a>
                 <p>Author: {{ product.author}}</p>
-                <h4>Precio $ {{ product.price}}</h4>
-                <h2>product likes: {{product.likes}}</h2>
+                <h3>Precio $ {{ product.price}}</h3>
+                <h4>product likes: {{product.likes}}</h4>
             </div>
             
         </div>
